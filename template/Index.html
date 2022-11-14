@@ -1,0 +1,104 @@
+{% include "header.html" %}
+<!-- End Header -->
+
+
+<!-- mighty Section  -->
+<section id="Weeknd">
+  <a href="/index">
+    {% load static %}
+    <img src="{% static 'img/ip6.jpg' %}" alt="My image">
+  </a>
+    <ul>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Select by brand</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul>
+            <li><a href="/index/">All Products</a></li>
+            {% for category in categories %}
+            <!-- <li>{{ category.name }}</li> -->
+            <li ><a href="/index/?category={{category.id}}">{{category.name}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+      </script>
+
+    </ul>
+  </div>
+
+  <div class="Starboy" style="margin-top: 50px;">
+
+    {% for product in products %}
+    <div class="alarm" id="{{product.id}}" >
+      <img src="{{ product.image.url }}" alt="My image">
+      <a href="/{{product.id}}"> {{product.brand}} <br>{{product.name}}</a>
+      <h2><br>Rs {{product.price}} (Incl, all taxes)</h2>
+    </div>
+    {% endfor %}
+  </div>
+
+
+</section>
+<!-- 2nd phase of mighty Section  -->
+
+<section id="Drake">
+  <div class="Gods">
+    <hr>
+    <div class="plan">POPULAR SEARCHES: Smart Watch | Fashion Watches | Casual Watch | Sport Watch</div>
+    <hr class="plan">
+    <p> WATCHES THAT COMPLIMENT YOUR STYLE</p>
+  </div>
+  <p class="plan">Watches do not only help you keep track of time but also make a strong style statement. They add wings
+    to your style and personality. <br>Like a sultry dress or a pair of flawless shoes, wrist watches enhance your whole
+    appearance. But before you go on making the <br>purchase, you must decide what would be the best watch to suit your
+    personality.</p>
+  <div class="plan">
+    <h2>TYPES OF WATCHES AT FASTRACK</h2>
+    <h3>DIGITAL-ANALOGUE WATCHES</h3>
+    <p>What if we tell you that you can get the classic look of an analogue watch combined with the features of a
+      digital watch? Sounds like a perfect combination, doesn’t it? Our collection of digital-analogue watches is just
+      that! With classic numerical dials and small digital screens, these watches come with a 5 ATM water resistance.
+    </p>
+    <h4>SMARTWATCHES</h4>
+    <p>They are the new generation wrist watches. In addition to telling the time and keeping track of activities, these
+      watches can be your trainer, your virtual assistant, and your mobile device, all wrapped up around your wrist. Our
+      smartwatch collections come packed with features like 24x7 heart rate monitoring, blood oxygen and sleep tracking,
+      stress monitoring, and 20+ sports modes. In addition to this, once paired with your smartphone, you can also
+      receive notifications, react to texts, play music, and do so much more.</p>
+    <h3>YOUR GUIDE TO PICKING THE PERFECT TIMEPIECE</h3>
+    <p>We all have a unique sense of style that makes us stand out from the crowd. It is reflected in the kind of
+      clothes we wear, the pair of shoes we pick, and the way we accessorise the entire outfit. All of this speaks
+      volumes about who we are, so it is obvious that each piece of jewellery, clothing, and accessories we own is
+      carefully picked out. So here we are, with some tips to help you decide what kind of watch would best fit your
+      aesthetic.</p>
+    <h3>YOUR BUDGET</h3>
+    <p>Determining how much are you willing to spend on a timepiece is very crucial. We do not want you to get your
+      heart set on a piece, only to be turned away by the price tag. So, our suggestion is to decide what your budget is
+      and then look at options that are available for you.</p>
+  </div>
+</section>
+</body>
+
+<!-- Finally the last section -->
+{% include "footer.html" %}

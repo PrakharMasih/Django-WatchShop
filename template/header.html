@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styleindex.css' %}">
+  <title>WatchShop</title>
+  <style>
+  .dropbtn {
+  margin-top: 10px;
+  background-color: whitesmoke;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: whitesmoke;
+  box-shadow: 0px 8px 16px 0px rgba(17, 88, 146, 0.8);
+
+}
+
+.dropdown {
+  position: absolute;
+  right: 6%;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  font-size: large;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(17, 88, 146, 0.8);
+  z-index: 1;
+  
+}
+
+.dropdown-content ul li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown li:hover {background-color: rgb(148, 194, 202);}
+
+.show {display: block;}
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="">
+            <h1><span>T</span>ime <span>C</span>entre</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="">Wishlist</a></li>
+            <li><a href="">cart</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="/">logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
